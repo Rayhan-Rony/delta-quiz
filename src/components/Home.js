@@ -1,9 +1,19 @@
 import React from 'react';
+import { useLoaderData } from 'react-router-dom'
+import QuizTopic from './QuizTopic';
 
 const Home = () => {
+    const quizesData = useLoaderData()
+    console.log(quizesData.data)
+    const quizesTopic = quizesData.data
     return (
-        <div className='mt-12 w-3/4 m-auto'>
+        <div className='mt-12 lg:w-3/4 m-auto'>
             <h1 className='font-bold text-7xl text-center'>Test Yourself As A Pro Developer</h1>
+            <div className='mt-20'>
+                {
+                    quizesTopic.map(topic => <QuizTopic key={topic.id} topic={topic}></QuizTopic>)
+                }
+            </div>
         </div>
     );
 };
