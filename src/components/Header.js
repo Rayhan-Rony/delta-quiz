@@ -2,7 +2,7 @@ import React from 'react';
 
 const Header = () => {
     return (
-        <div className="navbar bg-gray-100 px-20">
+        <div className="navbar bg-gray-100 lg:px-20">
             <div className="flex-1">
                 <a className="btn btn-ghost normal-case text-3xl font-extrabold text-blue-600">Delta Quiz</a>
             </div>
