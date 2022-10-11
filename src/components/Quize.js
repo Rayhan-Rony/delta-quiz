@@ -1,5 +1,6 @@
 import React from 'react';
 import { toast } from 'react-toastify';
+import { AiFillEye } from 'react-icons/ai';
 
 const Quize = ({ singleQuestion }) => {
     const { options, id, correctAnswer, question } = singleQuestion
@@ -20,10 +21,16 @@ const Quize = ({ singleQuestion }) => {
         }
         console.log(text)
     }
+    const handleViewCorrectAns = () => {
+        toast.dark(`The right answer is: ${correctAnswer}`, { autoClose: 2500 })
+    }
     // onClick={() => handleCorrectAnswer({ options })}
     return (
         <div className=' bg-blue-100 p-12'>
-            <p>Quiz :{question}</p>
+            <div className='flex justify-between'>
+                <p>Quiz :{question}</p>
+                <p className='text-xl' ><AiFillEye onClick={handleViewCorrectAns}></AiFillEye></p>
+            </div>
 
 
             <div className='grid lg:grid-cols-2 sm:grid-cols-1 md:grid-cols-1 mt-3'>
