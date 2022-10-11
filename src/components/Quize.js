@@ -2,13 +2,14 @@ import React from 'react';
 import { toast } from 'react-toastify';
 import { AiFillEye } from 'react-icons/ai';
 
-const Quize = ({ singleQuestion }) => {
+const Quize = ({ singleQuestion, count }) => {
     const { options, id, correctAnswer, question } = singleQuestion
     // console.log(singleQuestion)
     // console.log(options)
     // console.log(id)
     // console.log(correctAnswer)
     // console.log(question)
+
 
     const handleCorrectAnswer = (text) => {
         if (correctAnswer === text) {
@@ -19,7 +20,7 @@ const Quize = ({ singleQuestion }) => {
             toast.dark('Wrong Answer', { autoclose: 500 })
 
         }
-        console.log(text)
+
     }
     const handleViewCorrectAns = () => {
         toast.dark(`The right answer is: ${correctAnswer}`, { autoClose: 2500 })
@@ -28,7 +29,7 @@ const Quize = ({ singleQuestion }) => {
     return (
         <div className=' bg-blue-100 p-12 rounded-lg m-5'>
             <div className='flex justify-between align-middle'>
-                <p className='text-xl font-bold'>Quiz :{question.slice(3, -4)}</p>
+                <p className='text-xl font-bold'>Quiz {count} :{question.slice(3, -4)}</p>
                 <p className='text-xl' ><AiFillEye onClick={handleViewCorrectAns}></AiFillEye></p>
             </div>
 
