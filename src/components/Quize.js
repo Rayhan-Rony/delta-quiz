@@ -13,11 +13,11 @@ const Quize = ({ singleQuestion }) => {
     const handleCorrectAnswer = (text) => {
         if (correctAnswer === text) {
             toast.dark('Right Answer', { autoclose: 500 })
-            console.log('tumi pass')
+
         }
         else {
             toast.dark('Wrong Answer', { autoclose: 500 })
-            console.log('tumi fail')
+
         }
         console.log(text)
     }
@@ -26,26 +26,26 @@ const Quize = ({ singleQuestion }) => {
     }
     // onClick={() => handleCorrectAnswer({ options })}
     return (
-        <div className=' bg-blue-100 p-12'>
-            <div className='flex justify-between'>
-                <p>Quiz :{question}</p>
+        <div className=' bg-blue-100 p-12 rounded-lg m-5'>
+            <div className='flex justify-between align-middle'>
+                <p className='text-xl font-bold'>Quiz :{question}</p>
                 <p className='text-xl' ><AiFillEye onClick={handleViewCorrectAns}></AiFillEye></p>
             </div>
 
 
             <div className='grid lg:grid-cols-2 sm:grid-cols-1 md:grid-cols-1 mt-3'>
 
-                <p > <input onClick={() => handleCorrectAnswer(options[0])} type="radio" id={options[0]} name="option" /><label htmlFor={options[0]} >{options[0]}</label></p>
+                <p className='border-solid border-2 border-sky-300 p-5 m-3 rounded text-lg'> <input onClick={() => handleCorrectAnswer(options[0])} type="radio" id={options[0]} name="option" /><label className='ml-2' htmlFor={options[0]} >{options[0]}</label></p>
 
 
-                <p > <input onClick={() => handleCorrectAnswer(options[1])} type="radio" id={options[1]} name="option" />
-                    <label htmlFor={options[1]} >{options[1]}</label></p>
+                <p className='border-solid border-2 border-sky-300 p-5 m-3 rounded text-lg'> <input onClick={() => handleCorrectAnswer(options[1])} type="radio" id={options[1]} name="option" />
+                    <label className='ml-2' htmlFor={options[1]} >{options[1]}</label></p>
 
-                <p ><input onClick={() => handleCorrectAnswer(options[2])} type="radio" id={options[2]} name="option" />
-                    <label htmlFor={options[2]} >{options[2]}</label></p>
+                <p className='border-solid border-2 border-sky-300 p-5 m-3 rounded text-lg'><input onClick={() => handleCorrectAnswer(options[2])} type="radio" id={options[2]} name="option" />
+                    <label className='ml-2' htmlFor={options[2]} >{options[2]}</label></p>
 
-                <p > <input onClick={() => handleCorrectAnswer(options[3])} type="radio" id={options[3] ? options[3] : 'Above All'} name="option" />
-                    <label htmlFor={options[3] ? options[3] : 'Above All'} >{options[3] ? options[3] : "Above All"}</label></p>
+                <p className='border-solid border-2 border-sky-300 p-5 m-3 rounded text-lg'> <input onClick={() => handleCorrectAnswer(options[3])} type="radio" id={options[3] ? options[3] : 'Above All'} name="option" />
+                    <label className='ml-2' htmlFor={options[3] ? options[3] : 'Above All'} >{options[3] ? options[3] : "Above All"}</label></p>
 
             </div>
         </div>
