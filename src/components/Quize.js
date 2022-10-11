@@ -24,11 +24,11 @@ const Quize = ({ singleQuestion }) => {
     const handleViewCorrectAns = () => {
         toast.dark(`The right answer is: ${correctAnswer}`, { autoClose: 2500 })
     }
-    // onClick={() => handleCorrectAnswer({ options })}
+
     return (
         <div className=' bg-blue-100 p-12 rounded-lg m-5'>
             <div className='flex justify-between align-middle'>
-                <p className='text-xl font-bold'>Quiz :{question}</p>
+                <p className='text-xl font-bold'>Quiz :{question.slice(3, -4)}</p>
                 <p className='text-xl' ><AiFillEye onClick={handleViewCorrectAns}></AiFillEye></p>
             </div>
 

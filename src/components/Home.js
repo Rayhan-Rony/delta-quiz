@@ -4,7 +4,7 @@ import QuizTopic from './QuizTopic';
 
 const Home = () => {
     const quizesData = useLoaderData()
-    // console.log(quizesData.data)
+
     const quizesTopic = quizesData.data
 
     const handleStartQuiz = (id) => {

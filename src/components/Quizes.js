@@ -11,7 +11,7 @@ const Quizes = () => {
     // console.log(questions)
 
     return (
-        <div className=' lg:mt-20 sm:mt-16 md:mt-16 lg:w-1/2 lg:m-auto'>
+        <div className=' lg:mt-20 sm:mt-16 lg:w-1/2 lg:m-auto'>
             <h1 className='text-3xl font-bold text-center'> Quize Of {name}</h1>
             {
                 questions.map(singleQuestion => <Quize key={singleQuestion.id} singleQuestion={singleQuestion}></Quize>)
