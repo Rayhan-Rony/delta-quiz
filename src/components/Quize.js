@@ -4,20 +4,9 @@ import { AiFillEye } from 'react-icons/ai';
 import { RightContext, WrongContext } from './Root';
 
 const Quize = ({ singleQuestion, count }) => {
-    const { options, id, correctAnswer, question } = singleQuestion
-    // console.log(singleQuestion)
-    // console.log(options)
-    // console.log(id)
-    // console.log(correctAnswer)
-    // console.log(question)
-    // const [right, setRight] = useState(0)
-    // console.log(right)
-
+    const { options, correctAnswer, question } = singleQuestion
     const [right, setRight] = useContext(RightContext)
-    // console.log(right)
     const [wrong, setWrong] = useContext(WrongContext)
-
-
     const handleCorrectAnswer = (text) => {
         if (correctAnswer === text) {
             setRight(right + 1)
@@ -27,12 +16,10 @@ const Quize = ({ singleQuestion, count }) => {
             setWrong(wrong + 1)
             toast.dark('Wrong Answer', { autoclose: 500 })
         }
-
     }
     const handleViewCorrectAns = () => {
         toast.dark(`The right answer is: ${correctAnswer}`, { autoClose: 2500 })
     }
-
     return (
         <div className=' bg-blue-100 p-12 rounded-lg m-5'>
             <div className='flex justify-between align-middle'>

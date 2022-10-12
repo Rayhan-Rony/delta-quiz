@@ -2,9 +2,8 @@ import React from 'react';
 import { Link } from 'react-router-dom';
 import { VscArrowRight } from "react-icons/vsc";
 
-const QuizTopic = ({ topic, handleStartQuiz }) => {
+const QuizTopic = ({ topic }) => {
     const { id, name, logo, total } = topic;
-
     return (
         <div>
             <div className="card lg:card-side bg-blue-100 shadow-xl mt-8">
