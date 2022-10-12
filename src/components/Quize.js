@@ -30,20 +30,20 @@ const Quize = ({ singleQuestion, count }) => {
 
             <div className='grid lg:grid-cols-2 sm:grid-cols-1 md:grid-cols-1 mt-3'>
 
-                <p className='border-solid border-2 border-sky-300 p-5 m-3 rounded text-lg'> <input onClick={() => handleCorrectAnswer(options[0])} type="radio" id={options[0]} name="option" /><label className='ml-2' htmlFor={options[0]} >{options[0]}</label></p>
+                <label className='ml-2' htmlFor={options[0]} ><p className='border-solid border-2 border-sky-300 p-5 m-3 rounded text-lg hover:bg-sky-200'> <input onClick={() => handleCorrectAnswer(options[0])} type="radio" id={options[0]} name="option" />{options[0]}</p></label>
 
 
-                <p className='border-solid border-2 border-sky-300 p-5 m-3 rounded text-lg'> <input onClick={() => handleCorrectAnswer(options[1])} type="radio" id={options[1]} name="option" />
-                    <label className='ml-2' htmlFor={options[1]} >{options[1]}</label></p>
+                <label className='ml-2' htmlFor={options[1]} ><p className='border-solid border-2 border-sky-300 p-5 m-3 rounded text-lg hover:bg-sky-200'> <input onClick={() => handleCorrectAnswer(options[1])} type="radio" id={options[1]} name="option" />
+                    {options[1]}</p></label>
 
-                <p className='border-solid border-2 border-sky-300 p-5 m-3 rounded text-lg'><input onClick={() => handleCorrectAnswer(options[2])} type="radio" id={options[2]} name="option" />
-                    <label className='ml-2' htmlFor={options[2]} >{options[2]}</label></p>
+                <label className='ml-2' htmlFor={options[2]} > <p className='border-solid border-2 border-sky-300 p-5 m-3 rounded text-lg hover:bg-sky-200'><input onClick={() => handleCorrectAnswer(options[2])} type="radio" id={options[2]} name="option" />
+                    {options[2]}</p></label>
 
-                <p className='border-solid border-2 border-sky-300 p-5 m-3 rounded text-lg'> <input onClick={() => handleCorrectAnswer(options[3])} type="radio" id={options[3] ? options[3] : 'Above All'} name="option" />
-                    <label className='ml-2' htmlFor={options[3] ? options[3] : 'Above All'} >{options[3] ? options[3] : "Above All"}</label></p>
+                <label className='ml-2' htmlFor={options[3] ? options[3] : 'Above All'} ><p className='border-solid border-2 border-sky-300 p-5 m-3 rounded text-lg hover:bg-sky-200'> <input onClick={() => handleCorrectAnswer(options[3])} type="radio" id={options[3] ? options[3] : 'Above All'} name="option" />
+                    {options[3] ? options[3] : "Above All"}</p></label>
 
             </div>
-        </div>
+        </div >
 
 
     );
