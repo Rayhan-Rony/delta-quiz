@@ -1,6 +1,7 @@
-import React from 'react';
+import React, { useContext } from 'react';
 import { toast } from 'react-toastify';
 import { AiFillEye } from 'react-icons/ai';
+import { RightContext, WrongContext } from './Root';
 
 const Quize = ({ singleQuestion, count }) => {
     const { options, id, correctAnswer, question } = singleQuestion
@@ -9,16 +10,22 @@ const Quize = ({ singleQuestion, count }) => {
     // console.log(id)
     // console.log(correctAnswer)
     // console.log(question)
+    // const [right, setRight] = useState(0)
+    // console.log(right)
+
+    const [right, setRight] = useContext(RightContext)
+    // console.log(right)
+    const [wrong, setWrong] = useContext(WrongContext)
 
 
     const handleCorrectAnswer = (text) => {
         if (correctAnswer === text) {
+            setRight(right + 1)
             toast.dark('Right Answer', { autoclose: 500 })
-
         }
         else {
+            setWrong(wrong + 1)
             toast.dark('Wrong Answer', { autoclose: 500 })
-
         }
 
     }
@@ -50,6 +57,8 @@ const Quize = ({ singleQuestion, count }) => {
 
             </div>
         </div>
+
+
     );
 };
 
